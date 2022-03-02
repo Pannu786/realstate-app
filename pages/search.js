@@ -27,7 +27,7 @@ const Search = ({ properties }) => {
         alignItems='center'
         onClick={() => setSearchFilter((prevFilter) => !prevFilter)}
       >
-        <Text>test search !!</Text>
+        <Text>Search By Filter</Text>
         <Icon pl='2' w='7' as={BsFilter} />
       </Flex>
       {searchFilter && <SearchFilter />}
