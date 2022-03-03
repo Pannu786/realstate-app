@@ -103,6 +103,24 @@ const PropertyDetails = ({
               Amenities
             </Text>
           )}
+          <Flex flexWrap='wrap'>
+            {amenities?.map((item) =>
+              item?.amenities?.map((amenity) => (
+                <Text
+                  key={amenity.text}
+                  fontWeight='bold'
+                  color='blue.400'
+                  fontSize='l'
+                  p='2'
+                  bg='gray.200'
+                  m='1'
+                  borderRadius='5'
+                >
+                  {amenity.text}
+                </Text>
+              ))
+            )}
+          </Flex>
         </Box>
       </Box>
     </Box>
