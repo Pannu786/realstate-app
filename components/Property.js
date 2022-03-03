@@ -19,10 +19,10 @@ const Property = ({
     area,
     agency,
     isVerified,
-    externalId,
+    externalID,
   },
 }) => (
-  <Link href={`/property/${externalId}`} passHref>
+  <Link href={`/property/${externalID}`} passHref>
     <Flex
       flexWrap='wrap'
       w='420px'
@@ -41,6 +41,29 @@ const Property = ({
       </Box>
       <Box w='full'>
         <Flex paddingTop='2' alignItem='center' justifyContent='space-between'>
+          <Flex alignItem='center'>
+            <Box paddingRight='3' color='green.400'>
+              {isVerified && <GoVerified />}
+            </Box>
+            <Text fontWeight='bold' fontSize='lg'>
+              INR {millify(price)}
+              {rentFrequency && `/${rentFrequency}`}
+            </Text>
+          </Flex>
+          <Box>
+            <Avatar size='sm' src={agency?.logo?.url} />
+          </Box>
+        </Flex>
+        <Flex
+          alignItem='center'
+          p='1'
+          justifyContent='space-between'
+          w='250px'
+          color='blue.400'
+        >
+          {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft
+          <BsGridFill />
+        </Flex><Flex paddingTop='2' alignItem='center' justifyContent='space-between'>
           <Flex alignItem='center'>
             <Box paddingRight='3' color='green.400'>
               {isVerified && <GoVerified />}
